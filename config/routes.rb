@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'pages/info'
+  resources :comments
   resources :ideas
-  root to: redirect('/ideas')
+  get 'pages/info', controller: 'pages', action: 'info'
+
+  root to: redirect('/ideas') ## what is the home page
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
