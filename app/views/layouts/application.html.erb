@@ -21,14 +21,20 @@
               <a class="nav-link" href="<%= ideas_path %>">Ideas</a>
             </li>
             <li class="nav-item">
+              <%= link_to 'New Idea', new_idea_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="<%= pages_info_path %>">Info</a>
             </li>
+            <%= render 'devise/menu/login_items' %>
           </ul>
         </div>
       </div>
     </nav>
     <div class="container">
       <%= yield %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
     </div>
     <footer>
       <div class="container">
